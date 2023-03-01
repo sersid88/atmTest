@@ -2,16 +2,16 @@ import java.util.Date;
 
 public class Transaction {
 
-    /** The amount of this transaction*/
+    /** Сумма этой сделки*/
     private double amount;
 
-    /** The time and date of this transaction*/
+    /** Время и дата этой транзакции*/
     private Date timestamp;
 
-    /** A memo of this transaction*/
+    /** Памятка об этой транзакции*/
     private  String memo;
 
-    /** The account in which the transaction was performed*/
+    /** Счет, на котором была совершена транзакция*/
     private Account inAccount;
 
 }

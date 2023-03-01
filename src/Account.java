@@ -2,19 +2,37 @@ import java.util.ArrayList;
 
 public class Account {
 
-    /** The name of the account*/
+    /** Имя аккаунта*/
     private String name;
 
-    /** The current balance of the account*/
-    private double balance;
-
-    /** The account ID number*/
+    /** ID номер аккаунта*/
     private String uuid;
 
-    /** The User object that owns this account*/
+    /** Объект User, которому принадлежит эта учетная запись*/
     private User holder;
 
-    /** The list of transactions for this account*/
+    /** Список транзакций по этому счету*/
     private ArrayList<Transaction> transactions;
 
+
+    public Account (String name, User holder, Bank theBank) {
+
+        // установка имени аккаунта и держателя
+        this.name = name;
+        this. holder = holder;
+
+        //получить новый уникальный  номер аккаунта
+
+        this.uuid = theBank. getNewAccountUUID();
+
+        //список транзакций
+        this.transactions = new ArrayList<Transaction>();
+
+        //внесение держателя и банка в список
+
+        holder.addAccount(this);
+        theBank.addAccount(this);
+
+
+    }
 }
